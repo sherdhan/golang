@@ -44,3 +44,7 @@ func sumall(nomor ...int) int {
 	}
 	return total
 }
+
+func callname(nama string) string {
+	return "Halo " + nama
+}
