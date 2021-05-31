@@ -11,7 +11,7 @@ func main() {
 	estring := string(e)
 	fmt.Println(estring)
 
-	arr := [...]int{
+	arr := []int{
 		1, 2, 3,
 	}
 
@@ -25,8 +25,22 @@ func main() {
 		fmt.Println(arr[i])
 	}
 
+	total := sumall(10, 10, 10)
+	fmt.Println(total)
+
+	totalarr := sumall(arr...)
+	fmt.Println(totalarr)
+
 }
 
 func sayhello() {
 	fmt.Println("amang")
+}
+
+func sumall(nomor ...int) int {
+	total := 0
+	for _, v := range nomor {
+		total += v
+	}
+	return total
 }
