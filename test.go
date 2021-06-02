@@ -5,6 +5,9 @@ import "fmt"
 //Filter ...
 type Filter func(string) string
 
+// Blacklist ...
+type Blacklist func(string) bool
+
 func main() {
 
 	nilai := 90000000
@@ -37,6 +40,10 @@ func main() {
 	fmt.Println(totalarr)
 
 	sayhellowithfilter("test", namafilter)
+
+	registeruser("ahmad", func(nama string) bool {
+		return nama == "admin"
+	})
 }
 
 func sayhello() {
@@ -65,4 +72,12 @@ func namafilter(nama string) string {
 		return "..."
 	}
 	return nama
+}
+
+func registeruser(nama string, blacklist Blacklist) {
+	if blacklist(nama) {
+		fmt.Println("You are blocked", nama)
+	} else {
+		fmt.Println("Welcome ", nama)
+	}
 }
