@@ -11,6 +11,7 @@ func main() {
 
 	nama := "ahmad"
 	e := nama[0]
+	
 	estring := string(e)
 	fmt.Println(estring)
 
