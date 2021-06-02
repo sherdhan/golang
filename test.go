@@ -44,6 +44,8 @@ func main() {
 	registeruser("ahmad", func(nama string) bool {
 		return nama == "admin"
 	})
+
+	runapp(true)
 }
 
 func sayhello() {
@@ -80,4 +82,18 @@ func registeruser(nama string, blacklist Blacklist) {
 	} else {
 		fmt.Println("Welcome ", nama)
 	}
+}
+
+func runapp(status bool) {
+	defer endapp()
+	if status {
+		panic("error pada status")
+	}
+
+}
+
+func endapp() {
+	message := recover()
+	fmt.Println(message)
+	fmt.Println("Aplikasi selesai")
 }
