@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//Filter ...
 type Filter func(string) string
 
 func main() {
@@ -11,7 +12,7 @@ func main() {
 
 	nama := "ahmad"
 	e := nama[0]
-	
+
 	estring := string(e)
 	fmt.Println(estring)
 
@@ -62,7 +63,6 @@ func sayhellowithfilter(name string, filter Filter) {
 func namafilter(nama string) string {
 	if nama == "test" {
 		return "..."
-	} else {
-		return nama
 	}
+	return nama
 }
