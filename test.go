@@ -2,7 +2,10 @@ package main
 
 import "fmt"
 
+type Filter func(string) string
+
 func main() {
+
 	nilai := 90000000
 	fmt.Println(nilai)
 
@@ -31,6 +34,7 @@ func main() {
 	totalarr := sumall(arr...)
 	fmt.Println(totalarr)
 
+	sayhellowithfilter("test", namafilter)
 }
 
 func sayhello() {
@@ -47,4 +51,17 @@ func sumall(nomor ...int) int {
 
 func callname(nama string) string {
 	return "Halo " + nama
+}
+
+func sayhellowithfilter(name string, filter Filter) {
+	namefiltered := filter(name)
+	fmt.Println("Hello ", namefiltered)
+}
+
+func namafilter(nama string) string {
+	if nama == "test" {
+		return "..."
+	} else {
+		return nama
+	}
 }
