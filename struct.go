@@ -38,6 +38,8 @@ func main() {
 		fmt.Println("Unknown", value)
 	}
 
+	fibonacci(10)
+
 }
 
 // Customer ...
@@ -78,4 +80,16 @@ func pembagi(nilai int, pembagi int) (int, error) {
 
 func random() interface{} {
 	return "ahmad"
+}
+
+func fibonacci(jumlah int) {
+	val := 1
+	temp1 := 1
+	temp2 := 0
+	for i := 1; i <= jumlah; i++ {
+		val = temp1 + temp2
+		temp2 = temp1
+		temp1 = val
+		fmt.Print(val, " ")
+	}
 }
