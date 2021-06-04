@@ -21,11 +21,21 @@ func main() {
 	}
 	sayhi(new)
 
-	hasil, err := pembagi(10, 2)
+	hasil, err := pembagi(10, 1)
 	if err == nil {
 		fmt.Println("hasil = ", hasil)
 	} else {
-		fmt.Println("Error: ", err)
+		fmt.Println("Error: ", err.Error())
+	}
+
+	result := random()
+	switch value := result.(type) {
+	case string:
+		fmt.Println("ini string", value)
+	case int:
+		fmt.Println("ini int", value)
+	default:
+		fmt.Println("Unknown", value)
 	}
 
 }
@@ -64,4 +74,8 @@ func pembagi(nilai int, pembagi int) (int, error) {
 	}
 	hasil := nilai / pembagi
 	return hasil, nil
+}
+
+func random() interface{} {
+	return "ahmad"
 }
