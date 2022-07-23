@@ -9,7 +9,7 @@ func main() {
 	data := Customer{
 		nama:   "sherdhan",
 		alamat: "malang",
-		umur:   23,
+		umur:   24,
 	}
 
 	data.callfunc("ahmad")
@@ -83,7 +83,7 @@ func random() interface{} {
 }
 
 func fibonacci(jumlah int) {
-	val := 1
+	val := 0
 	temp1 := 1
 	temp2 := 0
 	for i := 1; i <= jumlah; i++ {

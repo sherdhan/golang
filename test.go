@@ -23,8 +23,6 @@ func main() {
 		1, 2, 3,
 	}
 
-	sayhello()
-
 	for key, value := range arr {
 		fmt.Println("index ", key, " = ", value)
 	}
@@ -45,11 +43,9 @@ func main() {
 		return nama == "admin"
 	})
 
-	runapp(true)
-}
+	examplemap()
 
-func sayhello() {
-	fmt.Println("amang")
+	runapp(true)
 }
 
 func sumall(nomor ...int) int {
@@ -82,6 +78,21 @@ func registeruser(nama string, blacklist Blacklist) {
 	} else {
 		fmt.Println("Welcome ", nama)
 	}
+}
+
+func examplemap(){
+	data := map[string]string{
+		"name" : "sherdhan",
+		"address" : "malang",
+	}
+	datas := make(map[string]string)
+	datas["name"] = "syarif" 
+	datas["tes"] = "syarif"
+
+	delete(datas, "tes")
+
+	fmt.Println(data)
+	fmt.Println(datas)
 }
 
 func runapp(status bool) {
