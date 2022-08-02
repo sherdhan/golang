@@ -49,6 +49,7 @@ func main() {
 }
 
 func sumall(nomor ...int) int {
+	// contoh variadic
 	total := 0
 	for _, v := range nomor {
 		total += v
