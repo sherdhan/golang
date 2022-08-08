@@ -6,6 +6,10 @@ type alamat struct {
 	negara, provinsi, kota string
 }
 
+func change_alamat(alamat *alamat) {
+	alamat.negara = "jepang"
+}
+
 func main() {
 	alamat1 := alamat{"indonesia", "jawa timur", "malang"}
 	alamat2 := &alamat1
@@ -18,4 +22,9 @@ func main() {
 	fmt.Println(alamat1)
 	fmt.Println(alamat2)
 	fmt.Println(alamat3)
+
+	alamat4 := &alamat{"indonesia", "jawa timur", "surabaya"}
+	change_alamat(alamat4)
+
+	fmt.Println(alamat4)
 }
