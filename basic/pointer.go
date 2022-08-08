@@ -6,8 +6,17 @@ type alamat struct {
 	negara, provinsi, kota string
 }
 
+type Man struct {
+	name string
+}
+
 func change_alamat(alamat *alamat) {
 	alamat.negara = "jepang"
+}
+
+//beri pointer * agar variable berubah
+func (man *Man) married() {
+	man.name = "Mr. " + man.name
 }
 
 func main() {
@@ -25,6 +34,10 @@ func main() {
 
 	alamat4 := &alamat{"indonesia", "jawa timur", "surabaya"}
 	change_alamat(alamat4)
-
 	fmt.Println(alamat4)
+
+	nama := Man{name: "sherdhan"}
+	fmt.Println(nama)
+	nama.married()
+	fmt.Println(nama)
 }
