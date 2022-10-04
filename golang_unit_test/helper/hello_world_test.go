@@ -67,6 +67,27 @@ func TestSubtest(t *testing.T) {
 		require.Equal(t, "Hello syarif", result, "TestSubTest: hasil harus sesuai")
 	})
 }
+
+func TestTabletest(t *testing.T) {
+	tests := []struct {
+		name     string
+		req      string
+		expected string
+	}{
+		{
+			name:     "test pertama",
+			req:      "sherdhan",
+			expected: "Hello sherdhan",
+		},
+	}
+
+	for _, v := range tests {
+		t.Run(v.name, func(t *testing.T) {
+			res := Helloworld(v.req)
+			require.Equal(t, v.expected, res)
+		})
+	}
+}
 func TestMain(m *testing.M) {
 	fmt.Println("BEFORE UNIT TEST")
 
