@@ -57,10 +57,20 @@ func TestSkip(t *testing.T) {
 	require.Equal(t, "Hello sherdhan", result, "skip: hasil harus sesuai")
 }
 
+func TestSubtest(t *testing.T) {
+	t.Run("sherdhan", func(t *testing.T) {
+		result := Helloworld("sherdhan")
+		require.Equal(t, "Hello sherdhan", result, "TestSubTest: hasil harus sesuai")
+	})
+	t.Run("syarif", func(t *testing.T) {
+		result := Helloworld("syarif")
+		require.Equal(t, "Hello syarif", result, "TestSubTest: hasil harus sesuai")
+	})
+}
 func TestMain(m *testing.M) {
-	fmt.Println("before unit test")
+	fmt.Println("BEFORE UNIT TEST")
 
 	m.Run()
 
-	fmt.Println("after unit test")
+	fmt.Println("AFTER UNIT TEST")
 }
